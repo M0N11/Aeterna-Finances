@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeterna Finances - Domina tu dinero sin cuentas ni registros</title>
+    <!-- Font Awesome v6.5.2 fix -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- 01. NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-emerald-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/35 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-wallet text-lg"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 to-emerald-600 bg-clip-text text-transparent">Aeterna Finances</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#resumen" class="hover:text-indigo-600 transition-colors">Resumen</a>
+                <a href="#calculadora" class="hover:text-indigo-600 transition-colors">Calculadora</a>
+                <a href="#graficas" class="hover:text-indigo-600 transition-colors">Gráficas</a>
+                <a href="#consejos" class="hover:text-indigo-600 transition-colors">Consejos</a>
+                <a href="#como-funciona" class="hover:text-indigo-600 transition-colors">Cómo funciona</a>
+                <a href="#faq" class="hover:text-indigo-600 transition-colors">FAQ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <button data-action="open-save-modal" class="flex items-center space-x-2 text-slate-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-folder-open text-indigo-500"></i>
+                    <span>Mis Escenarios</span>
+                </button>
+                <a href="#calculadora" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-indigo-500/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Probar Gratis
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 text-xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#resumen" class="block py-2 text-slate-600 font-medium">Resumen</a>
+            <a href="#calculadora" class="block py-2 text-slate-600 font-medium">Calculadora</a>
+            <a href="#graficas" class="block py-2 text-slate-600 font-medium">Gráficas</a>
+            <a href="#consejos" class="block py-2 text-slate-600 font-medium">Consejos</a>
+            <a href="#como-funciona" class="block py-2 text-slate-600 font-medium">Cómo funciona</a>
+            <a href="#faq" class="block py-2 text-slate-600 font-medium">FAQ</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col space-y-3">
+                <button data-action="open-save-modal" class="w-full text-left py-2 text-indigo-600 font-semibold flex items-center space-x-2">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Ver Mis Escenarios Guardados</span>
+                </button>
+                <a href="#calculadora" class="w-full text-center bg-indigo-600 text-white py-3 rounded-xl font-semibold">Calculadora Ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="inicio">
+        <!-- 02. HERO / PRESENTACIÓN -->
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-indigo-50/60 via-slate-50 to-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 bg-indigo-100/80 text-indigo-800 border border-indigo-200/60 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+                            <i class="fa-solid fa-shield-halved text-indigo-600"></i>
+                            <span>100% Privado • Sin contraseñas ni registros</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Organiza tu dinero <br class="hidden sm:inline">
+                            <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-emerald-500 bg-clip-text text-transparent">al instante y sin enredos.</span>
+                        </h1>
+                        <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Simula tu presupuesto mensual, calcula tus metas de ahorro y proyecta tu patrimonio futuro con claridad total. Todo ocurre en tu navegador.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#calculadora" class="w-full sm:w-auto text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-indigo-500/25 transition-all transform hover:-translate-y-0.5">
+                                Probar Calculadora Ahora
+                            </a>
+                            <a href="#como-funciona" class="w-full sm:w-auto text-center bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-base px-6 py-4 rounded-xl transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-600 mr-2"></i> Ver cómo funciona
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative">
+                        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative z-10 space-y-6">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-4">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Ejemplo de Salud Financiera</span>
+                                    <h3 class="text-xl font-extrabold text-slate-900">Regla 50 / 30 / 20</h3>
+                                </div>
+                                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Equilibrado</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-slate-600">Necesidades (50%)</span>
+                                        <span class="text-indigo-600 font-bold">$12,500 MXN</span>
+                                    </div>
+                                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                        <div class="h-full bg-indigo-600 rounded-full" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-slate-600">Deseos & Estilo de Vida (30%)</span>
+                                        <span class="text-amber-600 font-bold">$7,500 MXN</span>
+                                    </div>
+                                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                        <div class="h-full bg-amber-500 rounded-full" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-slate-600">Ahorro e Inversión (20%)</span>
+                                        <span class="text-emerald-600 font-bold">$5,000 MXN</span>
+                                    </div>
+                                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                                        <div class="h-full bg-emerald-500 rounded-full" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. RESUMEN FINANCIERO -->
+        <section id="resumen" class="py-20 bg-white border-y border-slate-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Metodología Clara</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">¿Cómo luce un presupuesto ideal?</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">Basado en la regla financiera mundialmente probada 50/30/20, Aeterna Finances te ayuda a estructurar tus entradas de forma equilibrada.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-indigo-50/50 border border-indigo-100 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-6">50%</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Gastos Fijos y Necesidades</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Renta, servicios, despensa, transporte y compromisos ineludibles para mantener tu estándar básico.</p>
+                    </div>
+
+                    <div class="p-8 rounded-2xl bg-amber-50/50 border border-amber-100 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-6">30%</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Gastos Variables / Estilo de Vida</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Restaurantes, entretenimiento, viajes, hobbies y gustos personales que disfrutas en el día a día.</p>
+                    </div>
+
+                    <div class="p-8 rounded-2xl bg-emerald-50/50 border border-emerald-100 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mb-6">20%</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Ahorro y Futuro</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Fondo de emergencias, pago de deudas de alto interés, inversiones y metas a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04. CALCULADORAS INTERACTIVAS -->
+        <section id="calculadora" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Simulador en Tiempo Real</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Ingresa tus datos mensuales</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">Ajusta los deslizadores o ingresa tus números directamente para obtener tu desglose al instante.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Formulario Interactivo -->
+                    <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                        
+                        <!-- Input 1: Ingresos -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <label for="range-income" class="text-sm font-semibold text-slate-700">Ingresos Mensuales Netos</label>
+                                <span class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-xl" id="display-income">$25,000 MXN</span>
+                            </div>
+                            <input type="range" id="range-income" min="5000" max="150000" step="500" value="25000" class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+                            <div class="flex items-center space-x-2 pt-1">
+                                <span class="text-xs text-slate-400 font-medium">$5k</span>
+                                <input type="number" id="num-income" value="25000" min="0" step="500" class="w-full text-sm font-semibold px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <span class="text-xs text-slate-400 font-medium">$150k</span>
+                            </div>
+                        </div>
+
+                        <!-- Input 2: Gastos Fijos -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <label for="range-fixed" class="text-sm font-semibold text-slate-700">Gastos Fijos (Vivienda, Servicios, Deudas)</label>
+                                <span class="text-sm font-bold text-rose-600 bg-rose-50 px-3 py-1 rounded-xl" id="display-fixed">$10,000 MXN</span>
+                            </div>
+                            <input type="range" id="range-fixed" min="0" max="100000" step="200" value="10000" class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+                            <div class="pt-1">
+                                <input type="number" id="num-fixed" value="10000" min="0" step="200" class="w-full text-sm font-semibold px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                        </div>
+
+                        <!-- Input 3: Gastos Variables -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <label for="range-variable" class="text-sm font-semibold text-slate-700">Gastos Variables (Ocio, Comida, Gustos)</label>
+                                <span class="text-sm font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-xl" id="display-variable">$5,000 MXN</span>
+                            </div>
+                            <input type="range" id="range-variable" min="0" max="80000" step="200" value="5000" class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+                            <div class="pt-1">
+                                <input type="number" id="num-variable" value="5000" min="0" step="200" class="w-full text-sm font-semibold px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                        </div>
+
+                        <!-- Input 4: Meta de Ahorro -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <label for="range-savings" class="text-sm font-semibold text-slate-700">Meta de Ahorro Mensual</label>
+                                <span class="text-sm font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-xl" id="display-savings">$5,000 MXN</span>
+                            </div>
+                            <input type="range" id="range-savings" min="0" max="80000" step="200" value="5000" class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+                            <div class="pt-1">
+                                <input type="number" id="num-savings" value="5000" min="0" step="200" class="w-full text-sm font-semibold px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                        </div>
+
+                        <!-- Guardar Localmente -->
+                        <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                            <input type="text" id="scenario-name" placeholder="Nombre de esta simulación (Ej: Plan 2026)" class="flex-1 text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <button data-action="save-scenario" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-colors flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-bookmark"></i>
+                                <span>Guardar en Navegador</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Métricas Principales en Vivo -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-4">Diagnóstico Financiero Directo</h3>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                    <span class="text-xs text-slate-500 font-medium">Disponible / Restante</span>
+                                    <p class="text-2xl font-extrabold text-slate-900 mt-1" id="metric-remaining">$5,000 MXN</p>
+                                </div>
+                                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                                    <span class="text-xs text-slate-500 font-medium">Tasa de Ahorro</span>
+                                    <p class="text-2xl font-extrabold text-emerald-600 mt-1" id="metric-rate">20.0%</p>
+                                </div>
+                            </div>
+
+                            <div id="status-badge" class="p-4 rounded-2xl bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-start space-x-3">
+                                <i class="fa-solid fa-circle-check text-xl text-emerald-600 mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-sm" id="badge-title">Presupuesto Saludable</h4>
+                                    <p class="text-xs mt-0.5" id="badge-desc">Tus gastos e ingresos están en perfecto equilibrio. Mantienes margen de maniobra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05. RESULTADOS Y GRÁFICAS -->
+        <section id="graficas" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Visualizaciones Claras</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Entiende la distribución de tu dinero</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">Analiza tus gastos actuales y proyecta tu patrimonio ahorrado a 12 meses de manera visual.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Gráfica 1: Distribución -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80">
+                        <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center space-x-2">
+                            <i class="fa-solid fa-chart-pie text-indigo-600"></i>
+                            <span>Distribución Mensual</span>
+                        </h3>
+                        <div class="relative h-64 sm:h-80 w-full flex items-center justify-center">
+                            <canvas id="chartDistribution"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfica 2: Proyección -->
+                    <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80">
+                        <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center space-x-2">
+                            <i class="fa-solid fa-chart-line text-emerald-600"></i>
+                            <span>Proyección de Ahorro Acumulado (12 Meses)</span>
+                        </h3>
+                        <div class="relative h-64 sm:h-80 w-full flex items-center justify-center">
+                            <canvas id="chartProjection"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06. CONSEJOS FINANCIEROS -->
+        <section id="consejos" class="py-20 bg-slate-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Inteligencia Financiera</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Recomendaciones Personalizadas</h2>
+                    <p class="text-slate-400 text-base sm:text-lg">Generadas automáticamente en tiempo real según los números que ingresaste.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="tips-container">
+                    <!-- Rellenado dinámicamente con JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 07. CÓMO FUNCIONA -->
+        <section id="como-funciona" class="py-20 bg-white border-b border-slate-200/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Simple y Rápido</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">¿Cómo funciona Aeterna Finances?</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">Diseñado para ofrecerte claridad financiera en segundos, sin fricciones ni registros molestos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto">1</div>
+                        <h3 class="text-xl font-bold text-slate-900">Ingresa tus datos</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Coloca tus ingresos netos y tus gastos proyectados en los controles interactivos.</p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto">2</div>
+                        <h3 class="text-xl font-bold text-slate-900">Visualiza el resultado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Obtén gráficos automáticos, proyecciones a 12 meses y consejos según tu perfil.</p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl font-extrabold mx-auto">3</div>
+                        <h3 class="text-xl font-bold text-slate-900">Guarda en tu navegador</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Guarda varios escenarios en la memoria local de tu dispositivo de manera 100% privada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08. PREGUNTAS FRECUENTES -->
+        <section id="faq" class="py-20 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Resolviendo Dudas</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Preguntas Frecuentes</h2>
+                    <p class="text-slate-600 text-base">Transparencia sobre tus datos y nuestros métodos de cálculo.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button data-action="toggle-faq" aria-expanded="false" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>¿Es realmente necesario crear una cuenta para usar Aeterna Finances?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                            No, en absoluto. Aeterna Finances está diseñado bajo una filosofía de privacidad total. No requerimos correo electrónico, contraseñas ni registros. Puedes usar la herramienta libremente de forma anónima.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button data-action="toggle-faq" aria-expanded="false" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>¿Dónde se guardan mis datos financieros?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                            Toda la información que ingresas se almacena exclusivamente dentro del almacenamiento local (`localStorage`) de tu navegador de internet. Ningún dato viaja a servidores externos ni es compartido con terceros.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <button data-action="toggle-faq" aria-expanded="false" class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>¿En qué consiste la regla 50/30/20?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                            Es una pauta de planificación financiera simple que sugiere dividir tus ingresos netos en tres categorías principales: 50% para necesidades indispensables, 30% para gastos personales o deseos, y 20% para ahorro o pago estratégico de deudas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 09. CTA FINAL Y FOOTER -->
+        <section class="py-16 bg-gradient-to-r from-indigo-600 to-emerald-600 text-white">
+            <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
+                <h2 class="text-3xl sm:text-4xl font-extrabold">Toma el control de tu dinero hoy mismo</h2>
+                <p class="text-indigo-100 text-base sm:text-lg max-w-2xl mx-auto">Comienza a simular tus finanzas sin barreras. Gratuito, instantáneo y totalmente privado.</p>
+                <div>
+                    <a href="#calculadora" class="inline-block bg-white text-indigo-600 font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-slate-100 transition-all transform hover:-translate-y-0.5">
+                        Ir a la Calculadora
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white">Aeterna Finances</span>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#resumen" class="hover:text-white transition-colors">Resumen</a>
+                    <a href="#calculadora" class="hover:text-white transition-colors">Calculadora</a>
+                    <a href="#graficas" class="hover:text-white transition-colors">Gráficas</a>
+                    <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 Aeterna Finances. Todos los derechos reservados. Diseñado para educación y bienestar financiero.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <span>Privacidad en localStorage</span>
+                    <span>Sin Cookies de Rastreo</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE ESCENARIOS GUARDADOS -->
+    <div id="modal-scenarios" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 relative shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-4">
+                <h3 class="text-lg font-bold text-slate-900" id="modal-title">Escenarios Guardados</h3>
+                <button data-action="close-save-modal" class="text-slate-400 hover:text-slate-600 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="modal-body" class="space-y-4">
+                <!-- Rellenado dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
